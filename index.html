@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sprint Task 3</title>
+</head>
+<body>
+    <div class="main">
+        <div class="first-step">
+            <label>
+                Введите сумму:
+            </label>
+            <input type="number" id="cash" oninput="calculate()">
+            <select id="valutaOF" onchange="calculate()">
+                <option value="KZT">KZT</option>
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+            </select>
+        </div>
+        <div class="curr">
+        <div class="currency1">
+            <label>KZT(tenge)</label>
+            <input type="number" id="KZT">
+        </div>
+        <div class="currency2">
+            <label>USD(dollar)</label>
+            <input type="number" id="USD">
+        </div>
+        <div class="currency3">
+            <label>EUR(euro)</label>
+            <input type="number" id="EUR">
+        </div>
+    </div>
+    </div>
+    <script>
+        function calculate() {
+            let money = parseInt(cash.value);
+            let valuta = valutaOF.value;
+            
+            let resultKZT, resultUSD, resultEUR;
+
+            if (valuta === 'KZT') {
+                resultUSD = (money / 431).toFixed(2);
+                resultEUR = (money / 509).toFixed(2);
+                resultKZT = 0;
+            } else if (valuta === 'USD') {
+                resultKZT = (money * 429).toFixed(2);
+                resultEUR = (money * 429 / 509).toFixed(2);
+                resultUSD = 0;
+            } else if (valuta === 'EUR') {
+                resultKZT = (money * 507).toFixed(2);
+                resultUSD = (money * 507 / 431).toFixed(2);
+                resultEUR = "";
+            }
+
+            KZT.value = resultKZT;
+            USD.value = resultUSD;
+            EUR.value = resultEUR;
+        }
+
+
+        cash.addEventListener('input', calculate);
+        valutaOF.addEventListener('change', calculate);
+    </script>
+</body>
+</html>

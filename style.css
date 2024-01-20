@@ -1,0 +1,37 @@
+.main{
+    display: flex;
+    width: 900px;
+    margin: 30px 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.curr {
+    display: flex;
+    margin-left: 90px;
+}
+
+.curr label{
+    font-weight: bold;
+}
+
+.first-step input{
+    margin-top: 5px;
+    border: 1px solid rgb(172, 172, 172);
+    width: 150px;
+    height: 30px;
+    box-shadow: h-offset v-offset blur spread color inset;
+}
+.first-step select{
+    border: 1px solid rgb(172, 172, 172);
+    width: 70px;
+    height: 33px;
+    box-shadow: h-offset v-offset blur spread color inset;
+}
+
+.curr input {
+    margin-top: 5px;
+    border: 1px solid rgb(172, 172, 172);
+    width: 150px;
+    height: 30px;
+    background-color: rgb(234, 236, 236);
+}
+
